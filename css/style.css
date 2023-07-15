@@ -328,6 +328,8 @@ section {
   color: var(--primary-black);
   background-color: var(--accent-text);
   padding: 8px 10px;
+
+  cursor: pointer;
 }
 
 .btn__hero-text {
