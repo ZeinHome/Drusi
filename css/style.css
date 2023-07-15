@@ -328,10 +328,10 @@ section {
   color: var(--primary-black);
   background-color: var(--accent-text);
   padding: 8px 10px;
-
+}
+.btn__hero:hover {
   cursor: pointer;
 }
-
 .btn__hero-text {
   color: var(--primary-black);
   text-decoration: underline;
