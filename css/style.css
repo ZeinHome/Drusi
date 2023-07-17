@@ -567,7 +567,7 @@ section {
   display: block;
   position: absolute;
   left: 5%;
-  bottom: 13%;
+  bottom: 15%;
   z-index: 2;
 }
 
@@ -584,5 +584,3 @@ section {
   white-space: nowrap;
   font-size: 38px;
 }
-/* .playing-mode {
-} */
