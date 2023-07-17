@@ -3,6 +3,9 @@
   --primary-text-color: #fff;
   --accent-text: #d3f332;
   --border-card: #b1b1b1;
+  --_button-size: 3rem;
+  --_panel-padding: 0.75rem;
+  --_panel-gap: 1rem;
 }
 
 /* Reset and base styles  */
@@ -476,21 +479,16 @@ section {
 
 .wrapper {
   max-width: 100%;
+  margin-top: 50px;
 }
 
 .accordion {
-  --_button-size: 3rem;
-  --_panel-padding: 0.75rem;
-  --_panel-gap: 1rem;
-
   display: flex;
   flex-direction: column;
   gap: 1rem;
 
   contain: content;
-  padding: 0.5rem;
-
-  margin-top: 50px;
+  padding: 10px;
 }
 
 @media (min-width: 45em) {
@@ -502,14 +500,10 @@ section {
 
 .accordion-panel {
   position: relative;
-  isolation: isolate;
   flex-basis: calc((var(--_panel-padding) * 2) + var(--_button-size));
   overflow: hidden;
   padding: var(--_panel-padding);
   padding-right: calc(var(--_panel-padding) * 4);
-  border-radius: calc(
-    ((var(--_panel-padding) * 2) + var(--_button-size)) / 2
-  );
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -547,29 +541,11 @@ section {
   z-index: 10;
 }
 
-.accordion-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out;
-}
-
-.accordion-item.active .accordion-content {
-  max-height: 1000px;
-  transition: max-height 0.3s ease-in;
-}
-.iframe {
-  position: relative;
-  z-index: -1;
-
-  border-radius: 35px;
-}
-
 .iframe {
   position: relative;
   z-index: -1;
   width: 1000px;
-  height: 400px;
-  border-radius: 35px;
+  height: 380px;
 }
 
 @media screen and (max-width: 1390px) and (min-width: 10024px) {
@@ -586,3 +562,27 @@ section {
 .accordion-panel:has([aria-expanded='true']) .iframe {
   z-index: 2;
 }
+
+.accordion__img {
+  display: block;
+  position: absolute;
+  left: 5%;
+  bottom: 13%;
+  z-index: 2;
+}
+
+@media (max-width: 45em) {
+  .accordion__img {
+    bottom: 5px;
+  }
+}
+.accordion__title {
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  z-index: 22;
+  white-space: nowrap;
+  font-size: 38px;
+}
+/* .playing-mode {
+} */

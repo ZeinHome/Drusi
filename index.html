@@ -19,13 +19,18 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.css"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+
     <!-- slider -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!--  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+    />
 
     <title>Drusi</title>
   </head>
@@ -307,6 +312,12 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen
                   ></iframe>
+                  <img
+                    class="accordion__img"
+                    src="./images/play.png"
+                    alt="Play"
+                  />
+                  <h2 class="accordion__title">2023-2022</h2>
                 </button>
               </div>
 
@@ -324,6 +335,12 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen
                   ></iframe>
+                  <img
+                    class="accordion__img"
+                    src="./images/play.png"
+                    alt="Play"
+                  />
+                  <h2 class="accordion__title">2021-2020</h2>
                 </button>
               </div>
 
@@ -341,6 +358,12 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen
                   ></iframe>
+                  <img
+                    class="accordion__img"
+                    src="./images/play.png"
+                    alt="Play"
+                  />
+                  <h2 class="accordion__title">2019-2010</h2>
                 </button>
               </div>
 
@@ -358,6 +381,12 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen
                   ></iframe>
+                  <img
+                    class="accordion__img"
+                    src="./images/play.png"
+                    alt="Play"
+                  />
+                  <h2 class="accordion__title">3023-4022</h2>
                 </button>
               </div>
             </div>
@@ -366,6 +395,9 @@
       </section>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script>
       if (window.innerWidth > 1023) {
         new fullpage('#fullpage', {
@@ -460,10 +492,6 @@
       function toggleAccordion(panelToActivate) {
         const buttons =
           panelToActivate.parentElement.querySelectorAll('button');
-        const contents =
-          panelToActivate.parentElement.querySelectorAll(
-            '.accordion-content'
-          );
 
         buttons.forEach((button) => {
           button.setAttribute('aria-expanded', false);
@@ -472,6 +500,55 @@
         panelToActivate
           .querySelector('button')
           .setAttribute('aria-expanded', true);
+      }
+
+      // basicLightbox
+      const refs = {
+        accordion: document.querySelector('body'),
+      };
+      // refs.accordion.addEventListener('click', onVideoClick);
+      refs.accordion.addEventListener('click', (e) => console.log(e));
+      function onVideoClick(e) {
+        // if (e.target.nodeName !== 'DIV') {
+        //   return;
+        // }
+
+        showModal();
+      }
+
+      let instance;
+
+      function showModal() {
+        instance = basicLightbox.create(`
+          <div class="modal">
+            <iframe
+                          class="iframe"
+                          src="https://www.youtube.com/embed/YTR0C8R1C6I"
+                          title="YouTube video player"
+                          frameborder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowfullscreen
+                        ></iframe>
+
+          </div>
+      `);
+        instance.show();
+        onModalOpen();
+      }
+
+      function onModalOpen() {
+        window.addEventListener('keydown', onEscPress);
+      }
+
+      function onEscPress(event) {
+        if (event.code === 'Escape') {
+          instance.close();
+          onModalClose();
+        }
+      }
+
+      function onModalClose() {
+        window.removeEventListener('keydown', onEscPress);
       }
     </script>
   </body>
