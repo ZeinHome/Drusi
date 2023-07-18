@@ -303,22 +303,18 @@
                   class="accordion-trigger"
                   aria-controls="panel1-content"
                   aria-expanded="true"
-                >
-                  <iframe
-                    class="iframe"
-                    src="https://www.youtube.com/embed/YTR0C8R1C6I"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                  <img
-                    class="accordion__img"
-                    src="./images/play.png"
-                    alt="Play"
-                  />
-                  <h2 class="accordion__title">2023-2022</h2>
-                </button>
+                ></button>
+                <img
+                  src="./images/maxresdefault.jpg"
+                  alt="cat"
+                  class="accordion-image"
+                />
+                <img
+                  class="accordion__img"
+                  src="./images/play.png"
+                  alt="Play"
+                />
+                <h2 class="accordion__title">2023-2022</h2>
               </div>
 
               <div class="accordion-panel">
@@ -326,22 +322,19 @@
                   class="accordion-trigger"
                   aria-expanded="false"
                   aria-controls="panel2-content"
-                >
-                  <iframe
-                    class="iframe"
-                    src="https://www.youtube.com/embed/YTR0C8R1C6I"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                  <img
-                    class="accordion__img"
-                    src="./images/play.png"
-                    alt="Play"
-                  />
-                  <h2 class="accordion__title">2021-2020</h2>
-                </button>
+                ></button>
+
+                <img
+                  src="./images/maxresdefault.jpg"
+                  alt="cat"
+                  class="accordion-image"
+                />
+                <img
+                  class="accordion__img"
+                  src="./images/play.png"
+                  alt="Play"
+                />
+                <h2 class="accordion__title">2023-2022</h2>
               </div>
 
               <div class="accordion-panel">
@@ -349,22 +342,18 @@
                   class="accordion-trigger"
                   aria-expanded="false"
                   aria-controls="panel3-content"
-                >
-                  <iframe
-                    class="iframe"
-                    src="https://www.youtube.com/embed/YTR0C8R1C6I"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                  <img
-                    class="accordion__img"
-                    src="./images/play.png"
-                    alt="Play"
-                  />
-                  <h2 class="accordion__title">2019-2010</h2>
-                </button>
+                ></button>
+                <img
+                  src="./images/maxresdefault.jpg"
+                  alt="cat"
+                  class="accordion-image"
+                />
+                <img
+                  class="accordion__img"
+                  src="./images/play.png"
+                  alt="Play"
+                />
+                <h2 class="accordion__title">2019-2010</h2>
               </div>
 
               <div class="accordion-panel">
@@ -373,21 +362,19 @@
                   aria-expanded="false"
                   aria-controls="panel4-content"
                 >
-                  <iframe
-                    class="iframe"
-                    src="https://www.youtube.com/embed/YTR0C8R1C6I"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                  ></iframe>
-                  <img
-                    class="accordion__img"
-                    src="./images/play.png"
-                    alt="Play"
-                  />
-                  <h2 class="accordion__title">3023-4022</h2>
+                  <h2 class="accordion__title">2023-2022</h2>
                 </button>
+
+                <img
+                  src="./images/maxresdefault.jpg"
+                  alt="cat"
+                  class="accordion-image"
+                />
+                <img
+                  class="accordion__img"
+                  src="./images/play.png"
+                  alt="Play"
+                />
               </div>
             </div>
           </div>
@@ -398,158 +385,10 @@
     <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.2/fullpage.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script>
-      if (window.innerWidth > 1023) {
-        new fullpage('#fullpage', {
-          autoScrolling: true,
-          scrollHorizontally: true,
-          scrollOverflow: true,
-          anchors: ['hero', 'about', 'services', 'casses'],
-          scrollingSpeed: 1000,
-          afterLoad: function (origin, destination, direction) {
-            var currentSection = destination.item;
-            var previousSection = origin && origin.item;
-
-            if (
-              currentSection.classList.contains('about-section') ||
-              currentSection.classList.contains('services-section') ||
-              currentSection.classList.contains('casses-section') ||
-              previousSection.classList.contains('about-section') ||
-              previousSection.classList.contains(
-                'services-section'
-              ) ||
-              previousSection.classList.contains('casses-section')
-            ) {
-              currentSection
-                .querySelectorAll('.fade-in')
-                .forEach(function (element) {
-                  element.classList.add('active');
-                });
-            }
-          },
-        });
-      }
-
-      const swiper = new Swiper('.swiper', {
-        direction: 'horizontal',
-        loop: true,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-          dynamicBullets: true,
-          renderBullet: function (index, className) {
-            if (index < 2) {
-              return '<span class="' + className + '"></span>';
-            }
-          },
-        },
-        slidesPerView: 3,
-        slidesPerGroup: 1,
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-
-        scrollbar: {
-          el: '.swiper-scrollbar',
-        },
-      });
-      // mobile menu
-      (() => {
-        const refs = {
-          menuBtnRef: document.querySelector('[data-menu-button]'),
-          closeModalBtn: document.querySelector('[data-menu-close]'),
-          mobileMenuRef: document.querySelector('[data-menu]'),
-          navigation: document.querySelector('.navigation'),
-        };
-
-        refs.menuBtnRef.addEventListener('click', toggleModal);
-        refs.closeModalBtn.addEventListener('click', toggleModal);
-
-        refs.navigation.addEventListener('click', closeModal);
-        function toggleModal() {
-          refs.mobileMenuRef.classList.toggle('is-open');
-          document.body.classList.toggle('modal-open');
-        }
-        function closeModal(e) {
-          if (e.target.nodeName !== 'A') {
-            return;
-          }
-          refs.mobileMenuRef.classList.toggle('is-open');
-          document.body.classList.toggle('modal-open');
-        }
-      })();
-
-      // accordion
-      const accordion = document.querySelector('.accordion');
-
-      accordion.addEventListener('click', (e) => {
-        const activePanel = e.target.closest('.accordion-panel');
-        if (!activePanel) return;
-        toggleAccordion(activePanel);
-      });
-
-      function toggleAccordion(panelToActivate) {
-        const buttons =
-          panelToActivate.parentElement.querySelectorAll('button');
-
-        buttons.forEach((button) => {
-          button.setAttribute('aria-expanded', false);
-        });
-
-        panelToActivate
-          .querySelector('button')
-          .setAttribute('aria-expanded', true);
-      }
-
-      // basicLightbox
-      // const refs = {
-      //   accordion: document.querySelector(''),
-      // };
-      // refs.accordion.addEventListener('click', onVideoClick);
-
-      function onVideoClick(e) {
-        // if (e.target.nodeName !== 'DIV') {
-        //   return;
-        // }
-
-        showModal();
-      }
-
-      let instance;
-
-      function showModal() {
-        instance = basicLightbox.create(`
-          <div class="modal">
-            <iframe
-                          class="iframe"
-                          src="https://www.youtube.com/embed/YTR0C8R1C6I"
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowfullscreen
-                        ></iframe>
-
-          </div>
-      `);
-        instance.show();
-        onModalOpen();
-      }
-
-      function onModalOpen() {
-        window.addEventListener('keydown', onEscPress);
-      }
-
-      function onEscPress(event) {
-        if (event.code === 'Escape') {
-          instance.close();
-          onModalClose();
-        }
-      }
-
-      function onModalClose() {
-        window.removeEventListener('keydown', onEscPress);
-      }
-    </script>
+    <script src="./js/onScreen.js" type="module" defer></script>
+    <script src="./js/swiper.js" type="module" defer></script>
+    <script src="./js/mobileMenu.js" type="module" defer></script>
+    <script src="./js/accordion.js" type="module" defer></script>
+    <script src="./js/basicLightbox.js" type="module" defer></script>
   </body>
 </html>
