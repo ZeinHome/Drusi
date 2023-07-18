@@ -2,7 +2,6 @@ if (window.innerWidth > 1023) {
   new fullpage('#fullpage', {
     autoScrolling: true,
     scrollHorizontally: true,
-    scrollOverflow: true,
     anchors: ['hero', 'about', 'services', 'casses'],
     scrollingSpeed: 1000,
     afterLoad: function (origin, destination, direction) {
