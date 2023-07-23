@@ -3,7 +3,6 @@
   --primary-text-color: #fff;
   --accent-text: #d3f332;
   --border-card: #b1b1b1;
-  --_button-size: 3rem;
   --_panel-padding: 0.75rem;
   --_panel-gap: 1rem;
 }
@@ -487,58 +486,19 @@ section {
   flex-direction: column;
   gap: 1rem;
 
-  contain: content;
   padding: 10px;
 }
 
-@media (min-width: 45em) {
-  .accordion {
-    flex-direction: row;
-    height: 30rem;
-  }
+.accordion {
+  display: grid;
+  grid-template-columns: 9fr repeat(2, 1fr) 4fr;
+  height: 30rem;
+  transition: grid-template-columns 500ms;
 }
 
 .accordion-panel {
   position: relative;
-  flex-basis: calc((var(--_panel-padding) * 2) + var(--_button-size));
-  overflow: hidden;
-  padding: var(--_panel-padding);
   padding-right: calc(var(--_panel-padding) * 4);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .accordion-panel {
-    transition: flex-basis 500ms, flex-grow 500ms;
-  }
-}
-
-.accordion-panel:has([aria-expanded='true']) {
-  flex-basis: clamp(15rem, 40vh, 20rem);
-  flex-grow: 1;
-}
-
-.accordion-trigger {
-  outline: 0;
-}
-
-.accordion-trigger {
-  display: flex;
-  align-items: center;
-  gap: var(--_panel-gap);
-  flex-direction: row-reverse;
-  background: transparent;
-  border: 0;
-  padding: 0;
-}
-
-.accordion-icon {
-  fill: var(--_panel-color);
-  background: hsl(0 0% 0% / 0.55);
-  width: var(--_button-size);
-  aspect-ratio: 1 / 1;
-  padding: 0.75rem;
-  border-radius: 50%;
-  z-index: 10;
 }
 
 .accordion-image {
@@ -555,9 +515,6 @@ section {
 
 .accordion-panel:has([aria-expanded='true']) .accordion-image {
   z-index: 2;
-}
-
-.accordion-panel:has([aria-expanded='true']) .accordion-image {
   filter: brightness(1);
 }
 
@@ -581,4 +538,45 @@ section {
   z-index: 222;
   white-space: nowrap;
   font-size: 20px;
+}
+
+.accordion-trigger {
+  outline: 0;
+}
+
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--_panel-gap);
+  flex-direction: row-reverse;
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .accordion-panel {
+    transition: flex-basis 500ms, flex-grow 500ms;
+  }
+}
+
+.accordion-panel:has([aria-expanded='true']) {
+  flex-basis: clamp(15rem, 40vh, 20rem);
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 780px) {
+  .accordion {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .accordion-panel {
+    flex-basis: calc(
+      (var(--_panel-padding) * 2) + var(--_button-size)
+    );
+    padding: var(--_panel-padding);
+  }
 }
