@@ -214,7 +214,7 @@ section {
 @media screen and (max-width: 1023px) {
   .menu-container {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: var(--primary-black);
