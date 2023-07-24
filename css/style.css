@@ -526,9 +526,11 @@ section {
   z-index: 2;
 }
 
-@media (max-width: 45em) {
+@media (max-width: 780px) {
   .accordion__img {
-    bottom: 5px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 .accordion__title {
