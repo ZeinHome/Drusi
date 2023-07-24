@@ -587,6 +587,7 @@ section {
 
 @media screen and (max-width: 780px) {
   .accordion-panel {
+    overflow: hidden;
     flex-basis: calc(
       (var(--_panel-padding) * 2) + var(--_button-size)
     );
