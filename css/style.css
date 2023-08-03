@@ -419,6 +419,9 @@ section {
 
   cursor: pointer;
 }
+.swiper-slide:hover {
+  border: var(--accent-text) 1px solid;
+}
 
 .slider__prev,
 .slider__next {
@@ -502,48 +505,46 @@ section {
 
 .accordion {
   display: grid;
-  grid-template-columns: 9fr repeat(2, 1fr) 4fr;
+  grid-template-columns: 5fr 1fr 1fr;
   height: 30rem;
+
   transition: grid-template-columns 500ms;
 }
 
 .accordion-panel {
   position: relative;
-  padding-right: calc(var(--_panel-padding) * 4);
+
+  box-shadow: -80px 2px 47px 23px #000000;
+}
+
+.accordion > .aaccordion-panel:hover {
+  grid-template-columns: 1fr 5fr 1fr;
+
+  cursor: wait;
 }
 
 .accordion-image {
   position: absolute;
-  inset: 0;
-  width: 90%;
+  width: 100%;
   height: 90%;
   object-fit: cover;
-  z-index: -1;
-
-  filter: brightness(0.4);
-  transition: filter 500ms;
-}
-
-.accordion-panel:has([aria-expanded='true']) .accordion-image {
-  z-index: 2;
-  filter: brightness(1);
 }
 
 .accordion__img {
   display: block;
   position: absolute;
-  left: 3%;
-  bottom: 15%;
-  z-index: 2;
+  left: 30px;
+  bottom: 55px;
+
+  transition: left 0.3s ease, bottom 0.3s ease;
 }
 
-@media (max-width: 780px) {
-  .accordion__img {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
+.accordion-panel:hover > .accordion__img {
+  left: 50%;
+  bottom: 40%;
+  transform: translate(-50%, -50%);
 }
+
 .accordion__title {
   position: absolute;
   left: 0;
@@ -567,30 +568,25 @@ section {
   padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .accordion-panel {
-    transition: flex-basis 500ms, flex-grow 500ms;
-  }
-}
-
-.accordion-panel:has([aria-expanded='true']) {
-  flex-basis: clamp(15rem, 40vh, 20rem);
-  flex-grow: 1;
-}
-
 @media screen and (max-width: 780px) {
   .accordion {
     display: flex;
     flex-direction: column;
   }
-}
 
-@media screen and (max-width: 780px) {
   .accordion-panel {
-    overflow: hidden;
-    flex-basis: calc(
-      (var(--_panel-padding) * 2) + var(--_button-size)
-    );
-    padding: var(--_panel-padding);
+    width: 90vw;
+    height: 400px;
+  }
+
+  .accordion__img {
+    width: 35px;
+    height: 35px;
+    left: 30px;
+    bottom: 35px;
+  }
+  .accordion-panel:hover > .accordion__img {
+    left: 60px;
+    bottom: 57px;
   }
 }

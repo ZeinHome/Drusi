@@ -33,18 +33,13 @@ accordion.addEventListener('click', (e) => {
 
         switch (controls) {
           case 'panel1-content':
-            accordion.style.gridTemplateColumns =
-              '9fr repeat(2, 1fr) 4fr';
+            accordion.style.gridTemplateColumns = ' 5fr 1fr 1fr';
             break;
           case 'panel2-content':
-            accordion.style.gridTemplateColumns = '1fr 9fr 1fr 4fr';
+            accordion.style.gridTemplateColumns = ' 1fr 5fr 1fr';
             break;
           case 'panel3-content':
-            accordion.style.gridTemplateColumns = '1fr 1fr 9fr  4fr';
-            break;
-          case 'panel4-content':
-            accordion.style.gridTemplateColumns =
-              '4fr repeat(2, 1fr) 9fr';
+            accordion.style.gridTemplateColumns = ' 1fr 1fr 5fr';
             break;
         }
       }
