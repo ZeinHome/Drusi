@@ -414,7 +414,7 @@ section {
 
 .swiper-slide {
   max-width: 350px;
-  padding: 100px 50px 100px 15px;
+  padding: 100px 50px 0 15px;
   border: var(--border-card) 1px solid;
 
   cursor: pointer;
@@ -453,6 +453,8 @@ section {
   font-size: 32px;
   font-weight: 800;
   text-transform: uppercase;
+
+  margin-bottom: 20px;
 }
 
 .swiper-slide > .slider__link {
@@ -472,15 +474,17 @@ section {
   content: '' !important;
 }
 
-@media screen and (min-width: 481px) and (max-width: 850px) {
-  .slider__title {
-    font-size: 18px;
+@media screen and (max-width: 475px) {
+  .swiper-slide {
+    padding-left: 20px;
+
+    width: 220px !important;
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 1000px) {
   .slider__title {
-    font-size: 13px;
+    font-size: 26px;
   }
 }
 @media screen and (max-width: 400px) {
@@ -515,12 +519,6 @@ section {
   position: relative;
 
   box-shadow: -80px 2px 47px 23px #000000;
-}
-
-.accordion > .aaccordion-panel:hover {
-  grid-template-columns: 1fr 5fr 1fr;
-
-  cursor: wait;
 }
 
 .accordion-image {

@@ -21,7 +21,6 @@ function toggleAccordion(panelToActivate) {
 }
 
 accordion.addEventListener('click', (e) => {
-  console.log(accordionPanels);
   accordionPanels.forEach((panel) => {
     const btn = panel.querySelector('.accordion-trigger');
 

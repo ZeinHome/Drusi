@@ -22,3 +22,23 @@ const swiper = new Swiper('.swiper', {
     el: '.swiper-scrollbar',
   },
 });
+
+function updateSwiperParams() {
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth <= 800) {
+    swiper.params.slidesPerView = 2;
+    swiper.params.slidesPerGroup = 1;
+    swiper.update();
+  } else {
+    swiper.params.slidesPerView = 3;
+    swiper.params.slidesPerGroup = 1;
+    swiper.update();
+  }
+}
+
+updateSwiperParams();
+
+window.addEventListener('resize', () => {
+  updateSwiperParams();
+});

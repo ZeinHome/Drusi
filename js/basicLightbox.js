@@ -1,29 +1,43 @@
 const refs = {
   accordion: document.querySelector('.accordion'),
 };
+const frameObj = {
+  frame1:
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/ctAgroiJRdQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+  frame2:
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/RibWK6GnS7E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+  frame3:
+    '<iframe width="560" height="315" src="https://www.youtube.com/embed/X0LAqGJNiBU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+};
+
 refs.accordion.addEventListener('click', onVideoClick);
 
 function onVideoClick(e) {
   if (e.target.nodeName !== 'IMG') {
     return;
   }
-
-  showModal();
+  const src = e.target.getAttribute('src');
+  let frame = null;
+  switch (src) {
+    case './images/preview-1.jpg':
+      frame = frameObj.frame1;
+      break;
+    case './images/preview-2.jpg':
+      frame = frameObj.frame2;
+      break;
+    case './images/preview-3.jpg':
+      frame = frameObj.frame3;
+      break;
+  }
+  showModal(frame);
 }
 
 let instance;
 
-function showModal() {
+function showModal(frame) {
   instance = basicLightbox.create(`
       <div class="modal">
-        <iframe       
-                      src="https://www.youtube.com/embed/YTR0C8R1C6I"
-                      title="YouTube video player"
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowfullscreen
-                    ></iframe>
-
+      ${frame}
       </div>
   `);
   instance.show();
