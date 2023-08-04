@@ -587,4 +587,7 @@ section {
     left: 60px;
     bottom: 57px;
   }
+  .accordion-image {
+    width: 95%;
+  }
 }
